@@ -63,11 +63,9 @@ public class AdminPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane2 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
-        id = new javax.swing.JLabel();
         lbl_img = new javax.swing.JLabel();
         Artistname = new javax.swing.JTextField();
         Schoolyear = new javax.swing.JComboBox<String>();
@@ -83,6 +81,7 @@ public class AdminPage extends javax.swing.JFrame {
         lblJasper = new javax.swing.JLabel();
         btnBack = new javax.swing.JLabel();
         lblWrapper = new javax.swing.JLabel();
+        id = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -130,8 +129,7 @@ public class AdminPage extends javax.swing.JFrame {
         }
         Table.getAccessibleContext().setAccessibleParent(jPanel1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 960, 150));
-        jPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 10, 10));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 960, 170));
 
         lbl_img.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -270,21 +268,27 @@ public class AdminPage extends javax.swing.JFrame {
         lblWrapper.setForeground(new java.awt.Color(255, 255, 255));
         lblWrapper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Admin Page.png"))); // NOI18N
         jPanel1.add(lblWrapper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
-
-        jScrollPane2.setViewportView(jPanel1);
-        jPanel1.getAccessibleContext().setAccessibleName("");
-        jPanel1.getAccessibleContext().setAccessibleParent(jPanel1);
+        jPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 10, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        jPanel1.getAccessibleContext().setAccessibleName("");
+        jPanel1.getAccessibleContext().setAccessibleParent(jPanel1);
 
         setSize(new java.awt.Dimension(1280, 720));
         setLocationRelativeTo(null);
@@ -362,7 +366,7 @@ public class AdminPage extends javax.swing.JFrame {
 
             ImageIcon image = new ImageIcon(img);
             Image im = image.getImage();
-            Image myImg = im.getScaledInstance(300, 290, Image.SCALE_SMOOTH);
+            Image myImg = im.getScaledInstance(295, 366, Image.SCALE_SMOOTH);
             ImageIcon newImage = new ImageIcon(myImg);
 
             lbl_img.setIcon(newImage);
@@ -450,7 +454,7 @@ public class AdminPage extends javax.swing.JFrame {
 
             ImageIcon ii = new ImageIcon(path);
 
-            Image img = ii.getImage().getScaledInstance(250, 290, Image.SCALE_SMOOTH);
+            Image img = ii.getImage().getScaledInstance(295, 366, Image.SCALE_SMOOTH);
 
             lbl_img.setIcon(new ImageIcon(img));
 
@@ -705,7 +709,6 @@ public class AdminPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblJasper;
     private javax.swing.JLabel lblWrapper;
     private javax.swing.JLabel lbl_img;

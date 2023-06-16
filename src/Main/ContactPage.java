@@ -28,6 +28,8 @@ public class ContactPage extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btnBack = new javax.swing.JLabel();
+        btnAdminPage = new javax.swing.JLabel();
+        btnAdminPage1 = new javax.swing.JLabel();
         labelWrapper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,6 +51,20 @@ public class ContactPage extends javax.swing.JFrame {
         });
         jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 20, 70, 40));
 
+        btnAdminPage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAdminPageMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnAdminPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 610, 90, 90));
+
+        btnAdminPage1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAdminPage1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnAdminPage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 610, 100, 90));
+
         labelWrapper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Contact Form.png"))); // NOI18N
         jPanel1.add(labelWrapper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
@@ -64,6 +80,23 @@ public class ContactPage extends javax.swing.JFrame {
 
         dispose();
     }//GEN-LAST:event_btnBackMouseClicked
+
+    private void btnAdminPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminPageMouseClicked
+        // TODO add your handling code here:
+            Landing_Page LP = new Landing_Page();
+            LP.show();
+
+            dispose();
+        
+    }//GEN-LAST:event_btnAdminPageMouseClicked
+
+    private void btnAdminPage1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminPage1MouseClicked
+        // TODO add your handling code here:
+        Landing_Page LP = new Landing_Page();
+        LP.show();
+
+        dispose();
+    }//GEN-LAST:event_btnAdminPage1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -101,6 +134,8 @@ public class ContactPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnAdminPage;
+    private javax.swing.JLabel btnAdminPage1;
     private javax.swing.JLabel btnBack;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelWrapper;

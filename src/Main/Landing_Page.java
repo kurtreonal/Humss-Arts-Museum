@@ -1,13 +1,6 @@
 package Main;
 
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
-import javax.swing.Timer;
 
 public class Landing_Page extends javax.swing.JFrame {
     int count;
