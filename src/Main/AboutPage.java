@@ -29,12 +29,9 @@ public class AboutPage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        LPurpose = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        btnHome = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        btnAdminPage1 = new javax.swing.JLabel();
+        lblWrapper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -43,46 +40,6 @@ public class AboutPage extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 80, 49));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/DSC07989.JPG"))); // NOI18N
-        jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 310, 203));
-
-        LPurpose.setFont(new java.awt.Font("Courier New", 2, 13)); // NOI18N
-        LPurpose.setForeground(new java.awt.Color(255, 255, 255));
-        LPurpose.setText("<html>&nbsp;&nbsp;&nbsp;The <b>purpose</b> of this project is to give students a platform to display their original artwork which will give them a sense of pride and accomplishment and encourage them to become more confident in their artistic abilities. But also appreciate their own creativity. <dl>&nbsp;&nbsp;&nbsp;<b>Additionally</b>, by showcasing works of art that showcase the histories and traditions of various cultures, we may increase our understanding of different cultures. </dl></html>");
-        LPurpose.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        LPurpose.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        LPurpose.setInheritsPopupMenu(false);
-        LPurpose.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LPurposeMouseClicked(evt);
-            }
-        });
-        jPanel1.add(LPurpose, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 350, 250));
-
-        jLabel2.setFont(new java.awt.Font("Courier New", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("ABOUT US");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
-
-        btnHome.setBackground(new java.awt.Color(51, 80, 49));
-        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/SHS_logo.png"))); // NOI18N
-        btnHome.setBorder(null);
-        btnHome.setBorderPainted(false);
-        btnHome.setContentAreaFilled(false);
-        btnHome.setOpaque(false);
-        btnHome.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnHomeMouseClicked(evt);
-            }
-        });
-        btnHome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHomeActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 110, 110));
 
         btnExit.setBackground(new java.awt.Color(51, 51, 51));
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
@@ -95,35 +52,21 @@ public class AboutPage extends javax.swing.JFrame {
         });
         jPanel1.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 60, 20));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Bg_design.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-260, 0, 1020, 470));
+        btnAdminPage1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAdminPage1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnAdminPage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 590, 110, 110));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 470));
+        lblWrapper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/ABOUT PAGE.png"))); // NOI18N
+        jPanel1.add(lblWrapper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
-        setSize(new java.awt.Dimension(774, 475));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
+
+        setSize(new java.awt.Dimension(1296, 759));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void LPurposeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LPurposeMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LPurposeMouseClicked
-
-    private void btnHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseClicked
-        // TODO add your handling code here
-
-        count++;
-        if(count == 10){
-            AdminLogin jf2 = new AdminLogin();
-            jf2.show();
-
-            dispose();
-        }
-
-    }//GEN-LAST:event_btnHomeMouseClicked
-
-    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
@@ -132,6 +75,14 @@ public class AboutPage extends javax.swing.JFrame {
 
         dispose();
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnAdminPage1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminPage1MouseClicked
+        // TODO add your handling code here:
+        Landing_Page LP = new Landing_Page();
+        LP.show();
+
+        dispose();
+    }//GEN-LAST:event_btnAdminPage1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -171,12 +122,9 @@ public class AboutPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LPurpose;
+    private javax.swing.JLabel btnAdminPage1;
     private javax.swing.JButton btnExit;
-    private javax.swing.JButton btnHome;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblWrapper;
     // End of variables declaration//GEN-END:variables
 }

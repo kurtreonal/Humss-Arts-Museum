@@ -1,6 +1,7 @@
 
 package Main;
 
+
 public class APImageViewer extends javax.swing.JFrame {
 
     /**
@@ -8,12 +9,12 @@ public class APImageViewer extends javax.swing.JFrame {
      */
     public APImageViewer() {
         initComponents();
-        
-        instantiateLblImage();
     }
-    public void instantiateLblImage() {
-        lblImage = new javax.swing.JLabel(); // Instantiate the lblImage object
-        panelWrapper.add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 620, 380)); // Add lblImage to jPanel1
+    
+    public void instantiateLblImageView() {
+        lblImage = new javax.swing.JLabel(); // Instantiate the lblImageView object
+        panelWrapper.add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 530, 280)); // Add lblImageView to jPanel1
+
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -25,9 +26,7 @@ public class APImageViewer extends javax.swing.JFrame {
     private void initComponents() {
 
         panelWrapper = new javax.swing.JPanel();
-        btnExit = new javax.swing.JButton();
         lblImage = new javax.swing.JLabel();
-        lblArt = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -35,45 +34,18 @@ public class APImageViewer extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelWrapper.setBackground(new java.awt.Color(51, 80, 49));
+        panelWrapper.setBackground(new java.awt.Color(29, 113, 81));
         panelWrapper.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnExit.setBackground(new java.awt.Color(41, 65, 40));
-        btnExit.setForeground(new java.awt.Color(193, 216, 191));
-        btnExit.setText("BACK");
-        btnExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExitActionPerformed(evt);
-            }
-        });
-        panelWrapper.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 20));
-
         lblImage.setForeground(new java.awt.Color(255, 255, 255));
-        lblImage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        panelWrapper.add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 620, 380));
+        panelWrapper.add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 660, 550));
+        panelWrapper.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 570));
 
-        lblArt.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        lblArt.setForeground(new java.awt.Color(255, 255, 255));
-        lblArt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblArt.setText("OKITA SOUJI");
-        panelWrapper.add(lblArt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 620, 60));
+        getContentPane().add(panelWrapper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 570));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Bg_design.png"))); // NOI18N
-        panelWrapper.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 540));
-
-        getContentPane().add(panelWrapper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 540));
-
-        setSize(new java.awt.Dimension(680, 539));
+        setSize(new java.awt.Dimension(680, 569));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        // TODO add your handling code here:
-        AdminPage AP = new AdminPage();
-        AP.show();
-
-        dispose();
-    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -112,9 +84,7 @@ public class APImageViewer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnExit;
     private javax.swing.JLabel jLabel1;
-    public static javax.swing.JLabel lblArt;
     public static javax.swing.JLabel lblImage;
     private javax.swing.JPanel panelWrapper;
     // End of variables declaration//GEN-END:variables

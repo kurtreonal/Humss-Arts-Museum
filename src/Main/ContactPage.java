@@ -4,6 +4,11 @@
  */
 package Main;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 /**
  *
  * @author Kurt Pascua
@@ -30,10 +35,10 @@ public class ContactPage extends javax.swing.JFrame {
         btnBack = new javax.swing.JLabel();
         btnAdminPage = new javax.swing.JLabel();
         btnAdminPage1 = new javax.swing.JLabel();
+        btnWebsite = new javax.swing.JLabel();
         labelWrapper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -64,6 +69,13 @@ public class ContactPage extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnAdminPage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 610, 100, 90));
+
+        btnWebsite.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnWebsiteMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnWebsite, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 440, 440, 90));
 
         labelWrapper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Contact Form.png"))); // NOI18N
         jPanel1.add(labelWrapper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -97,6 +109,23 @@ public class ContactPage extends javax.swing.JFrame {
 
         dispose();
     }//GEN-LAST:event_btnAdminPage1MouseClicked
+
+    private void btnWebsiteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnWebsiteMouseClicked
+        // TODO add your handling code here:
+        String hyperlink = "https://shsinsannicholas3.weebly.com/";  //hyperlinks
+
+        try {
+            if (Desktop.isDesktopSupported()) {
+                Desktop desktop = Desktop.getDesktop();
+                if (desktop.isSupported(Desktop.Action.BROWSE)) {
+                    desktop.browse(new URI(hyperlink));
+                }
+            }
+        } catch (IOException | URISyntaxException ex) {
+            ex.printStackTrace();
+            // Handle any exceptions that occur during the process
+        }
+    }//GEN-LAST:event_btnWebsiteMouseClicked
 
     /**
      * @param args the command line arguments
@@ -137,6 +166,7 @@ public class ContactPage extends javax.swing.JFrame {
     private javax.swing.JLabel btnAdminPage;
     private javax.swing.JLabel btnAdminPage1;
     private javax.swing.JLabel btnBack;
+    private javax.swing.JLabel btnWebsite;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelWrapper;
     // End of variables declaration//GEN-END:variables

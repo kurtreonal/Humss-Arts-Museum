@@ -45,17 +45,20 @@ public class AdminLogin extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(51, 80, 49));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(193, 216, 191));
+        jLabel1.setBackground(new java.awt.Color(29, 113, 81));
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(29, 113, 81));
         jLabel1.setText("Username");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 20));
 
-        txtUsername.setBackground(new java.awt.Color(143, 136, 76));
+        txtUsername.setBackground(new java.awt.Color(29, 113, 81));
+        txtUsername.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         txtUsername.setForeground(new java.awt.Color(239, 235, 224));
         txtUsername.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
@@ -70,12 +73,13 @@ public class AdminLogin extends javax.swing.JFrame {
         });
         jPanel2.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 310, 30));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(193, 216, 191));
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(29, 113, 81));
         jLabel2.setText("Password");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
 
-        txtPassword.setBackground(new java.awt.Color(143, 136, 76));
+        txtPassword.setBackground(new java.awt.Color(29, 113, 81));
+        txtPassword.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         txtPassword.setForeground(new java.awt.Color(239, 235, 224));
         txtPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -85,18 +89,20 @@ public class AdminLogin extends javax.swing.JFrame {
         });
         jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 310, 30));
 
-        btnExit.setBackground(new java.awt.Color(143, 136, 76));
-        btnExit.setForeground(new java.awt.Color(239, 235, 224));
-        btnExit.setText("BACK");
+        btnExit.setBackground(new java.awt.Color(242, 242, 242));
+        btnExit.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        btnExit.setForeground(new java.awt.Color(242, 242, 242));
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8-back-button-20.png"))); // NOI18N
+        btnExit.setBorder(null);
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
             }
         });
-        jPanel2.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 20));
+        jPanel2.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 20, 20));
 
-        btnLogin.setBackground(new java.awt.Color(143, 136, 76));
-        btnLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnLogin.setBackground(new java.awt.Color(29, 113, 81));
+        btnLogin.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(239, 235, 224));
         btnLogin.setText("LOGIN");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -111,8 +117,8 @@ public class AdminLogin extends javax.swing.JFrame {
         });
         jPanel2.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 90, 30));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Admin Login_1.png"))); // NOI18N
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, -1));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bglogin.png"))); // NOI18N
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 460));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,7 +131,7 @@ public class AdminLogin extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setSize(new java.awt.Dimension(386, 468));
+        setSize(new java.awt.Dimension(370, 460));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -163,7 +169,7 @@ public class AdminLogin extends javax.swing.JFrame {
                 AdminPage adminP = new AdminPage();
                 adminP.show();
             } else {
-                JOptionPane.showMessageDialog(this, "username or password is wrong...");
+                JOptionPane.showMessageDialog(this, "Incorrect Username or Password...");
                 txtUsername.setText("");
                 txtPassword.setText("");
             }

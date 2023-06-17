@@ -36,7 +36,7 @@ public class Landing_Page extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnContact1.setBackground(new java.awt.Color(254, 251, 234));
-        btnContact1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnContact1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         btnContact1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnContact1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/abou.png"))); // NOI18N
         btnContact1.setText("About Us");
@@ -45,9 +45,9 @@ public class Landing_Page extends javax.swing.JFrame {
                 btnContact1MouseClicked(evt);
             }
         });
-        jPanel1.add(btnContact1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 670, 140, 30));
+        jPanel1.add(btnContact1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 669, 140, 30));
 
-        btnContact.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnContact.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         btnContact.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnContact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cont.png"))); // NOI18N
         btnContact.setText("Contact Us");
@@ -56,14 +56,14 @@ public class Landing_Page extends javax.swing.JFrame {
                 btnContactMouseClicked(evt);
             }
         });
-        jPanel1.add(btnContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 670, 140, 30));
+        jPanel1.add(btnContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 669, 140, 30));
 
         labelHeading1.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
         labelHeading1.setForeground(new java.awt.Color(254, 251, 234));
         labelHeading1.setText("\"Every artist was first an amateur\"");
         jPanel1.add(labelHeading1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 550, -1, -1));
 
-        btnDisplay.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnDisplay.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         btnDisplay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnDisplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/paint.png"))); // NOI18N
         btnDisplay.setText("Humss Arts");
@@ -72,18 +72,18 @@ public class Landing_Page extends javax.swing.JFrame {
                 btnDisplayMouseClicked(evt);
             }
         });
-        jPanel1.add(btnDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 140, 30));
+        jPanel1.add(btnDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 670, 140, 30));
 
-        btnDisplayPage.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnDisplayPage.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         btnDisplayPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnDisplayPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/paint.png"))); // NOI18N
-        btnDisplayPage.setText("Art List");
+        btnDisplayPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/admin.png"))); // NOI18N
+        btnDisplayPage.setText("Admin");
         btnDisplayPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnDisplayPageMouseClicked(evt);
             }
         });
-        jPanel1.add(btnDisplayPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 670, 140, 30));
+        jPanel1.add(btnDisplayPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 140, 30));
 
         btnAdminPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -137,22 +137,26 @@ int x = 300;
 
     private void btnDisplayPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDisplayPageMouseClicked
         // TODO add your handling code here:
-        DisplayPage DP = new DisplayPage();
-        DP.show();
+        AdminLogin AL = new AdminLogin();
+        AL.show();
 
         dispose();
     }//GEN-LAST:event_btnDisplayPageMouseClicked
 
     private void btnContactMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContactMouseClicked
         // TODO add your handling code here:
-        ContactPage AP = new ContactPage();
-        AP.show();
+        ContactPage CP = new ContactPage();
+        CP.show();
 
         dispose();
     }//GEN-LAST:event_btnContactMouseClicked
 
     private void btnContact1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContact1MouseClicked
         // TODO add your handling code here:
+        AboutPage AP = new AboutPage();
+        AP.show();
+        
+        dispose();
     }//GEN-LAST:event_btnContact1MouseClicked
 
     private void btnAdminPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminPageMouseClicked

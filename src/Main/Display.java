@@ -68,7 +68,7 @@ public class Display extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton2.setBackground(new java.awt.Color(29, 113, 81));
-        jButton2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("View Art");
         jButton2.setBorder(null);
@@ -90,11 +90,11 @@ public class Display extends javax.swing.JFrame {
                 lbl_imgviewMouseClicked(evt);
             }
         });
-        jPanel1.add(lbl_imgview, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 510, 510));
+        jPanel1.add(lbl_imgview, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 103, 495, 507));
 
         Table.setBackground(new java.awt.Color(29, 113, 81));
         Table.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(255, 255, 255)));
-        Table.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        Table.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         Table.setForeground(new java.awt.Color(255, 255, 255));
         Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -124,7 +124,6 @@ public class Display extends javax.swing.JFrame {
             }
         });
         Table.setRowHeight(50);
-        Table.setShowGrid(true);
         Table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TableMouseClicked(evt);
@@ -137,13 +136,13 @@ public class Display extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, 500, 460));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(29, 113, 81));
         jLabel3.setText("Search:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 60, 40));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, 80, 40));
 
         search.setBackground(new java.awt.Color(29, 113, 81));
-        search.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        search.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         search.setForeground(new java.awt.Color(255, 255, 255));
         search.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         search.addActionListener(new java.awt.event.ActionListener() {
@@ -161,7 +160,7 @@ public class Display extends javax.swing.JFrame {
         });
         jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, 360, 40));
 
-        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBack.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnBack.setText("Back");
@@ -203,7 +202,7 @@ public class Display extends javax.swing.JFrame {
 
                 ImageIcon image = new ImageIcon(img);
                 Image im = image.getImage();
-                Image myImg = im.getScaledInstance(510, 510, Image.SCALE_SMOOTH);
+                Image myImg = im.getScaledInstance(495, 507, Image.SCALE_SMOOTH);
                 ImageIcon newImage = new ImageIcon(myImg);
 
                 lbl_imgview.setIcon(newImage);
@@ -242,7 +241,7 @@ int x = 300;
 
                     ImageIcon image = new ImageIcon(img);
                     Image im = image.getImage();
-                    Image myImg = im.getScaledInstance(510, 510, Image.SCALE_SMOOTH);
+                    Image myImg = im.getScaledInstance(475, 487, Image.SCALE_SMOOTH);
                     ImageIcon newImage = new ImageIcon(myImg);
 
                     ImageViewer.lblImageView.setIcon(newImage);
@@ -284,7 +283,7 @@ int x = 300;
 
                     ImageIcon image = new ImageIcon(img);
                     Image im = image.getImage();
-                    Image myImg = im.getScaledInstance(510, 510, Image.SCALE_SMOOTH);
+                    Image myImg = im.getScaledInstance(475, 487, Image.SCALE_SMOOTH);
                     ImageIcon newImage = new ImageIcon(myImg);
 
                     ImageViewer.lblImageView.setIcon(newImage);

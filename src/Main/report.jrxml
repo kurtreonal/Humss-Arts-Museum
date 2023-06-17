@@ -46,11 +46,11 @@ FROM
 			<staticText>
 				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="c4c3d71b-0092-4c6a-991e-37333805c6dc"/>
 				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[Leaf Green Title]]></text>
+				<text><![CDATA[Humss Art Catalog]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="SubTitle" x="100" y="46" width="174" height="22" uuid="bc9f14e5-f122-4e44-949e-0a6005b972e0"/>
-				<text><![CDATA[Leaf Green SubTitle]]></text>
+				<text><![CDATA[Humss Art Print]]></text>
 			</staticText>
 		</band>
 	</title>

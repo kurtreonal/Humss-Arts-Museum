@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.util.logging.Level;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -74,12 +75,14 @@ public class AdminPage extends javax.swing.JFrame {
         UserArtDesc = new javax.swing.JTextField();
         txt_name = new javax.swing.JLabel();
         btnImage = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblSave = new javax.swing.JLabel();
+        lblUpdate = new javax.swing.JLabel();
+        lblReset = new javax.swing.JLabel();
+        lblDelete = new javax.swing.JLabel();
         lblJasper = new javax.swing.JLabel();
         btnBack = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        search = new javax.swing.JTextField();
         lblWrapper = new javax.swing.JLabel();
         id = new javax.swing.JLabel();
 
@@ -136,10 +139,10 @@ public class AdminPage extends javax.swing.JFrame {
                 lbl_imgMouseClicked(evt);
             }
         });
-        jPanel1.add(lbl_img, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 110, 295, 366));
+        jPanel1.add(lbl_img, new org.netbeans.lib.awtextra.AbsoluteConstraints(927, 110, 300, 368));
 
         Artistname.setBackground(new java.awt.Color(29, 113, 81));
-        Artistname.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        Artistname.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         Artistname.setForeground(new java.awt.Color(255, 255, 255));
         Artistname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 251, 234)));
         Artistname.addActionListener(new java.awt.event.ActionListener() {
@@ -150,13 +153,14 @@ public class AdminPage extends javax.swing.JFrame {
         jPanel1.add(Artistname, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 368, 30));
 
         Schoolyear.setBackground(new java.awt.Color(29, 113, 81));
+        Schoolyear.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         Schoolyear.setForeground(new java.awt.Color(255, 255, 255));
         Schoolyear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2016-2017", "2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024", "2024-2025", "2025-2026", "2026-2027", "2027-2028", "2028-2029", "2029-2030" }));
         Schoolyear.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 251, 234)));
         jPanel1.add(Schoolyear, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 368, 30));
 
         Emailaddress.setBackground(new java.awt.Color(29, 113, 81));
-        Emailaddress.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        Emailaddress.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         Emailaddress.setForeground(new java.awt.Color(255, 255, 255));
         Emailaddress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 251, 234)));
         Emailaddress.addActionListener(new java.awt.event.ActionListener() {
@@ -167,14 +171,14 @@ public class AdminPage extends javax.swing.JFrame {
         jPanel1.add(Emailaddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 368, 30));
 
         UserArt.setBackground(new java.awt.Color(29, 113, 81));
-        UserArt.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        UserArt.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         UserArt.setForeground(new java.awt.Color(255, 255, 255));
         UserArt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 251, 234)));
         jPanel1.add(UserArt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 368, 50));
 
         UserArtDesc.setBackground(new java.awt.Color(29, 113, 81));
         UserArtDesc.setColumns(5);
-        UserArtDesc.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        UserArtDesc.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         UserArtDesc.setForeground(new java.awt.Color(255, 255, 255));
         UserArtDesc.setAlignmentY(20.0F);
         UserArtDesc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 251, 234)));
@@ -188,62 +192,62 @@ public class AdminPage extends javax.swing.JFrame {
         txt_name.setForeground(new java.awt.Color(51, 80, 49));
         jPanel1.add(txt_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
 
-        btnImage.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnImage.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         btnImage.setForeground(new java.awt.Color(255, 255, 255));
         btnImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnImage.setText("BROWSE");
+        btnImage.setText("ADD IMAGE");
         btnImage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnImageMouseClicked(evt);
             }
         });
-        jPanel1.add(btnImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 140, 90, 20));
+        jPanel1.add(btnImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(727, 139, 90, 20));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(254, 251, 234));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("SAVE");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblSave.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        lblSave.setForeground(new java.awt.Color(254, 251, 234));
+        lblSave.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSave.setText("SAVE");
+        lblSave.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                lblSaveMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 506, 90, 20));
+        jPanel1.add(lblSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 506, 90, 20));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(254, 251, 234));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("UPDATE");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblUpdate.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        lblUpdate.setForeground(new java.awt.Color(254, 251, 234));
+        lblUpdate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblUpdate.setText("UPDATE");
+        lblUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                lblUpdateMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 505, 90, 20));
+        jPanel1.add(lblUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 505, 90, 20));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(254, 251, 234));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("RESET");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblReset.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        lblReset.setForeground(new java.awt.Color(254, 251, 234));
+        lblReset.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblReset.setText("RESET");
+        lblReset.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                lblResetMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 505, 80, 20));
+        jPanel1.add(lblReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 505, 80, 20));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(254, 251, 234));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("DELETE");
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblDelete.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        lblDelete.setForeground(new java.awt.Color(254, 251, 234));
+        lblDelete.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDelete.setText("DELETE");
+        lblDelete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                lblDeleteMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 505, 80, 20));
+        jPanel1.add(lblDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 505, 80, 20));
 
-        lblJasper.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        lblJasper.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         lblJasper.setForeground(new java.awt.Color(254, 251, 234));
         lblJasper.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblJasper.setText("REPORT");
@@ -264,6 +268,30 @@ public class AdminPage extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 28, 70, 30));
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(29, 113, 81));
+        jLabel3.setText("Search:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, 60, 40));
+
+        search.setBackground(new java.awt.Color(29, 113, 81));
+        search.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        search.setForeground(new java.awt.Color(255, 255, 255));
+        search.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
+        search.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                searchKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                searchKeyTyped(evt);
+            }
+        });
+        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 30, 360, 40));
 
         lblWrapper.setForeground(new java.awt.Color(255, 255, 255));
         lblWrapper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Admin Page.png"))); // NOI18N
@@ -366,7 +394,7 @@ public class AdminPage extends javax.swing.JFrame {
 
             ImageIcon image = new ImageIcon(img);
             Image im = image.getImage();
-            Image myImg = im.getScaledInstance(295, 366, Image.SCALE_SMOOTH);
+            Image myImg = im.getScaledInstance(300, 368, Image.SCALE_SMOOTH);
             ImageIcon newImage = new ImageIcon(myImg);
 
             lbl_img.setIcon(newImage);
@@ -389,7 +417,7 @@ public class AdminPage extends javax.swing.JFrame {
     }//GEN-LAST:event_EmailaddressActionPerformed
 
     private void lbl_imgMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_imgMouseClicked
-/*        byte[] img = null;
+        byte[] img = null;
         try {
             Connection myConn = ConDB.getConnection();
             Statement st = myConn.createStatement();
@@ -398,7 +426,7 @@ public class AdminPage extends javax.swing.JFrame {
             if (rs.next()) {
                 img = rs.getBytes("image_file");
                 if (img != null) {
-                    APImageViewer view = new APImageViewer();
+                    ImageViewer view = new ImageViewer();
                     view.setTitle("Image View");
                     view.setVisible(true);
                     view.pack();
@@ -407,11 +435,15 @@ public class AdminPage extends javax.swing.JFrame {
 
                     ImageIcon image = new ImageIcon(img);
                     Image im = image.getImage();
-                    Image myImg = im.getScaledInstance(620, 380, Image.SCALE_SMOOTH);
+                    Image myImg = im.getScaledInstance(475, 487, Image.SCALE_SMOOTH);
                     ImageIcon newImage = new ImageIcon(myImg);
 
-                    APImageViewer.lblImage.setIcon(newImage);
-                    APImageViewer.lblArt.setText(rs.getString("User_Art"));
+                    ImageViewer.lblImageView.setIcon(newImage);
+                    ImageViewer.lblArtistname.setText(rs.getString("Artist_name"));
+                    ImageViewer.lblSchoolyear.setText(rs.getString("School_year"));
+                    ImageViewer.lblEmail.setText(rs.getString("Email_address"));
+                    ImageViewer.lblArt.setText(rs.getString("User_Art"));
+                    ImageViewer.txtArtDesc.setText(rs.getString("User_Art_Desc"));
 
                     // Close the current frame
                     this.dispose();
@@ -423,7 +455,7 @@ public class AdminPage extends javax.swing.JFrame {
             }
         } catch (Exception e) {
             System.out.println(e);
-        } */
+        }
 
 //this has an error mouseclicks wont work when there's two of them retrieving the image in the database the other jlabel display the image but the other jlabel won't display it 
     }//GEN-LAST:event_lbl_imgMouseClicked
@@ -454,14 +486,14 @@ public class AdminPage extends javax.swing.JFrame {
 
             ImageIcon ii = new ImageIcon(path);
 
-            Image img = ii.getImage().getScaledInstance(295, 366, Image.SCALE_SMOOTH);
+            Image img = ii.getImage().getScaledInstance(298, 366, Image.SCALE_SMOOTH);
 
             lbl_img.setIcon(new ImageIcon(img));
 
         }
     }//GEN-LAST:event_btnImageMouseClicked
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void lblSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSaveMouseClicked
         // TODO add your handling code here:
         
         String ArtistName = Artistname.getText();
@@ -492,7 +524,7 @@ public class AdminPage extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Invalid Artist Name!");
 
                 } else if (emailAddress.equals("")) {
-                    JOptionPane.showMessageDialog(this, "Invalid Art Description");
+                    JOptionPane.showMessageDialog(this, "Invalid Email Address");
                 } else if (userArtDesc.equals("")) {
                     JOptionPane.showMessageDialog(this, "Invalid Art Description");
                 } else if (path == null) {
@@ -532,9 +564,9 @@ public class AdminPage extends javax.swing.JFrame {
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e);
         }
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_lblSaveMouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void lblUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUpdateMouseClicked
         // TODO add your handling code here:
         //        //database connection
         try {
@@ -575,18 +607,18 @@ public class AdminPage extends javax.swing.JFrame {
         } catch (ClassNotFoundException | SQLException | IOException e) {
             System.out.println(e);
         }
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_lblUpdateMouseClicked
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void lblResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblResetMouseClicked
         // TODO add your handling code here:
         Artistname.setText(""); // reset the artist name
         Emailaddress.setText(""); //Reset the email addre
         UserArt.setText(""); //reset the Title of the art
         UserArtDesc.setText(""); //reset the descrip
         lbl_img.setIcon(null); // Reset the lbl_img which is the label container
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_lblResetMouseClicked
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+    private void lblDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDeleteMouseClicked
         // TODO add your handling code here:
 
         try {
@@ -621,7 +653,7 @@ public class AdminPage extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println(e);
         }
-    }//GEN-LAST:event_jLabel4MouseClicked
+    }//GEN-LAST:event_lblDeleteMouseClicked
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
         Landing_Page LP = new Landing_Page();
@@ -631,32 +663,62 @@ public class AdminPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackMouseClicked
 
     private void lblJasperMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJasperMouseClicked
-        // TODO add your handling code here:
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            
+
             myCon = DriverManager.getConnection("jdbc:mysql://localhost/humss_db", "root", "");
-            JasperDesign jdesign = JRXmlLoader.load("C:\\Users\\Kurt Pascua\\OneDrive\\Documents\\NetBeansProjects\\Humss-Art-Museum\\Humss-Art-Museum\\Humss-Art-Museum-master\\src\\Main\\report.jrxml");
+            JasperDesign jdesign = JRXmlLoader.load("C:\\Users\\Kurt Pascua\\OneDrive\\Documents\\NetBeansProjects\\Humss-Arts-Museum\\src\\Main\\report.jrxml");
             String query = "SELECT * FROM users";
-            
+
             JRDesignQuery updateQuery = new JRDesignQuery();
             updateQuery.setText(query);
-            
+
             jdesign.setQuery(updateQuery);
-            
+
             JasperReport jreport = JasperCompileManager.compileReport(jdesign);
             JasperPrint jprint = JasperFillManager.fillReport(jreport, null, myCon);
-            JasperViewer.viewReport(jprint);
-            
-        
-        }catch(ClassNotFoundException ex) {
-           java.util.logging.Logger.getLogger(AdminPage.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (JRException ex) {
-            java.util.logging.Logger.getLogger(AdminPage.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+            JasperViewer viewer = new JasperViewer(jprint, false);
+            viewer.setAlwaysOnTop(true);
+            viewer.setVisible(true);
+            viewer.toFront();
+        } catch (ClassNotFoundException | JRException | SQLException ex) {
             java.util.logging.Logger.getLogger(AdminPage.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_lblJasperMouseClicked
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+
+    }//GEN-LAST:event_searchActionPerformed
+
+    private void searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyReleased
+        // TODO add your handling code here:
+        String searchTerm = search.getText(); // Assuming you have a text field for entering the search term
+
+        try {
+            Connection myConn = ConDB.getConnection();
+
+            String sqlSearch = "SELECT id as 'No.', Artist_name as 'Artist Name', School_year as 'School Year', "
+            + "Email_address as 'Email Address', User_Art as 'Art Title', User_Art_Desc as 'Art Description', `image_name` as 'Image Name' "
+            + "FROM users "
+            + "WHERE Artist_name LIKE ? OR User_Art LIKE ? OR School_year LIKE ?";
+
+            PreparedStatement ps = myConn.prepareStatement(sqlSearch);
+            ps.setString(1, "%" + searchTerm + "%"); // Use % wildcard to search for partial matches
+            ps.setString(2, "%" + searchTerm + "%");
+            ps.setString(3, "%" + searchTerm + "%");
+
+            ResultSet rs = ps.executeQuery();
+
+            Table.setModel(DbUtils.resultSetToTableModel(rs));
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_searchKeyReleased
+
+    private void searchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchKeyTyped
 
     /**
      * @param args the command line arguments
@@ -703,15 +765,17 @@ public class AdminPage extends javax.swing.JFrame {
     private javax.swing.JLabel btnBack;
     private javax.swing.JLabel btnImage;
     private javax.swing.JLabel id;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblDelete;
     private javax.swing.JLabel lblJasper;
+    private javax.swing.JLabel lblReset;
+    private javax.swing.JLabel lblSave;
+    private javax.swing.JLabel lblUpdate;
     private javax.swing.JLabel lblWrapper;
     private javax.swing.JLabel lbl_img;
+    private javax.swing.JTextField search;
     private javax.swing.JLabel txt_name;
     // End of variables declaration//GEN-END:variables
 

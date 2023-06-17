@@ -54,7 +54,7 @@
         <Component class="javax.swing.JProgressBar" name="progressbar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="18" green="28" red="19" type="rgb"/>
+              <Color blue="51" green="71" red="1d" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d9" green="e7" red="d9" type="rgb"/>
@@ -95,7 +95,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/assets/HUMSS ART MUSEUM.png"/>
+              <Image iconType="3" name="/assets/HUMSS ART.png"/>
             </Property>
           </Properties>
           <Constraints>

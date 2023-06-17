@@ -40,7 +40,7 @@ public class SplashScreen extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(51, 80, 49));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        progressbar.setBackground(new java.awt.Color(25, 40, 24));
+        progressbar.setBackground(new java.awt.Color(29, 113, 81));
         progressbar.setForeground(new java.awt.Color(217, 231, 217));
         progressbar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jPanel1.add(progressbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 640, 20));
@@ -53,7 +53,7 @@ public class SplashScreen extends javax.swing.JFrame {
         counter.setToolTipText("");
         jPanel1.add(counter, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 150, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/HUMSS ART MUSEUM.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/HUMSS ART.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 420));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
