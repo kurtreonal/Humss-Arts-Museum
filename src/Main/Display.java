@@ -82,7 +82,7 @@ public class Display extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 640, 90, 40));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 650, 90, 40));
 
         lbl_imgview.setBackground(new java.awt.Color(51, 80, 49));
         lbl_imgview.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -90,7 +90,7 @@ public class Display extends javax.swing.JFrame {
                 lbl_imgviewMouseClicked(evt);
             }
         });
-        jPanel1.add(lbl_imgview, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 103, 495, 507));
+        jPanel1.add(lbl_imgview, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 113, 500, 510));
 
         Table.setBackground(new java.awt.Color(29, 113, 81));
         Table.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(255, 255, 255)));
@@ -169,9 +169,9 @@ public class Display extends javax.swing.JFrame {
                 btnBackMouseClicked(evt);
             }
         });
-        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 110, 40));
+        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 120, 40));
 
-        labelWrapper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/4.png"))); // NOI18N
+        labelWrapper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Display.png"))); // NOI18N
         jPanel1.add(labelWrapper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -202,7 +202,7 @@ public class Display extends javax.swing.JFrame {
 
                 ImageIcon image = new ImageIcon(img);
                 Image im = image.getImage();
-                Image myImg = im.getScaledInstance(495, 507, Image.SCALE_SMOOTH);
+                Image myImg = im.getScaledInstance(500, 510, Image.SCALE_SMOOTH);
                 ImageIcon newImage = new ImageIcon(myImg);
 
                 lbl_imgview.setIcon(newImage);
@@ -241,7 +241,7 @@ int x = 300;
 
                     ImageIcon image = new ImageIcon(img);
                     Image im = image.getImage();
-                    Image myImg = im.getScaledInstance(475, 487, Image.SCALE_SMOOTH);
+                    Image myImg = im.getScaledInstance(477, 489, Image.SCALE_SMOOTH);
                     ImageIcon newImage = new ImageIcon(myImg);
 
                     ImageViewer.lblImageView.setIcon(newImage);
@@ -283,7 +283,7 @@ int x = 300;
 
                     ImageIcon image = new ImageIcon(img);
                     Image im = image.getImage();
-                    Image myImg = im.getScaledInstance(475, 487, Image.SCALE_SMOOTH);
+                    Image myImg = im.getScaledInstance(477, 489, Image.SCALE_SMOOTH);
                     ImageIcon newImage = new ImageIcon(myImg);
 
                     ImageViewer.lblImageView.setIcon(newImage);

@@ -87,6 +87,7 @@ public class AdminPage extends javax.swing.JFrame {
         id = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Admin Page");
         setAlwaysOnTop(true);
         setUndecorated(true);
         setResizable(false);
@@ -132,62 +133,62 @@ public class AdminPage extends javax.swing.JFrame {
         }
         Table.getAccessibleContext().setAccessibleParent(jPanel1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 960, 170));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 540, 960, 150));
 
         lbl_img.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_imgMouseClicked(evt);
             }
         });
-        jPanel1.add(lbl_img, new org.netbeans.lib.awtextra.AbsoluteConstraints(927, 110, 300, 368));
+        jPanel1.add(lbl_img, new org.netbeans.lib.awtextra.AbsoluteConstraints(673, 105, 423, 255));
 
         Artistname.setBackground(new java.awt.Color(29, 113, 81));
-        Artistname.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Artistname.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         Artistname.setForeground(new java.awt.Color(255, 255, 255));
-        Artistname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 251, 234)));
+        Artistname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         Artistname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ArtistnameActionPerformed(evt);
             }
         });
-        jPanel1.add(Artistname, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 368, 30));
+        jPanel1.add(Artistname, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 368, 50));
 
         Schoolyear.setBackground(new java.awt.Color(29, 113, 81));
-        Schoolyear.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Schoolyear.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         Schoolyear.setForeground(new java.awt.Color(255, 255, 255));
         Schoolyear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2016-2017", "2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024", "2024-2025", "2025-2026", "2026-2027", "2027-2028", "2028-2029", "2029-2030" }));
-        Schoolyear.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 251, 234)));
-        jPanel1.add(Schoolyear, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 368, 30));
+        Schoolyear.setBorder(null);
+        jPanel1.add(Schoolyear, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 368, 50));
 
         Emailaddress.setBackground(new java.awt.Color(29, 113, 81));
-        Emailaddress.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Emailaddress.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         Emailaddress.setForeground(new java.awt.Color(255, 255, 255));
-        Emailaddress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 251, 234)));
+        Emailaddress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         Emailaddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EmailaddressActionPerformed(evt);
             }
         });
-        jPanel1.add(Emailaddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 368, 30));
+        jPanel1.add(Emailaddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 368, 50));
 
         UserArt.setBackground(new java.awt.Color(29, 113, 81));
-        UserArt.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        UserArt.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         UserArt.setForeground(new java.awt.Color(255, 255, 255));
-        UserArt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 251, 234)));
-        jPanel1.add(UserArt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 368, 50));
+        UserArt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jPanel1.add(UserArt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 368, 50));
 
         UserArtDesc.setBackground(new java.awt.Color(29, 113, 81));
         UserArtDesc.setColumns(5);
-        UserArtDesc.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        UserArtDesc.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         UserArtDesc.setForeground(new java.awt.Color(255, 255, 255));
         UserArtDesc.setAlignmentY(20.0F);
-        UserArtDesc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 251, 234)));
+        UserArtDesc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         UserArtDesc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UserArtDescActionPerformed(evt);
             }
         });
-        jPanel1.add(UserArtDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 368, 180));
+        jPanel1.add(UserArtDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 368, 150));
 
         txt_name.setForeground(new java.awt.Color(51, 80, 49));
         jPanel1.add(txt_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
@@ -201,7 +202,7 @@ public class AdminPage extends javax.swing.JFrame {
                 btnImageMouseClicked(evt);
             }
         });
-        jPanel1.add(btnImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(727, 139, 90, 20));
+        jPanel1.add(btnImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 390, 90, 20));
 
         lblSave.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         lblSave.setForeground(new java.awt.Color(254, 251, 234));
@@ -223,18 +224,18 @@ public class AdminPage extends javax.swing.JFrame {
                 lblUpdateMouseClicked(evt);
             }
         });
-        jPanel1.add(lblUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 505, 90, 20));
+        jPanel1.add(lblUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 506, 90, 20));
 
         lblReset.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         lblReset.setForeground(new java.awt.Color(254, 251, 234));
         lblReset.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblReset.setText("RESET");
+        lblReset.setText("CLEAR");
         lblReset.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblResetMouseClicked(evt);
             }
         });
-        jPanel1.add(lblReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 505, 80, 20));
+        jPanel1.add(lblReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 506, 80, 20));
 
         lblDelete.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         lblDelete.setForeground(new java.awt.Color(254, 251, 234));
@@ -245,7 +246,7 @@ public class AdminPage extends javax.swing.JFrame {
                 lblDeleteMouseClicked(evt);
             }
         });
-        jPanel1.add(lblDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 505, 80, 20));
+        jPanel1.add(lblDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 507, 80, 20));
 
         lblJasper.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         lblJasper.setForeground(new java.awt.Color(254, 251, 234));
@@ -258,7 +259,7 @@ public class AdminPage extends javax.swing.JFrame {
         });
         jPanel1.add(lblJasper, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 506, 90, 20));
 
-        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBack.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnBack.setText("Back");
@@ -267,7 +268,7 @@ public class AdminPage extends javax.swing.JFrame {
                 btnBackMouseClicked(evt);
             }
         });
-        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 28, 70, 30));
+        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 33, 70, 30));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(29, 113, 81));
@@ -277,6 +278,7 @@ public class AdminPage extends javax.swing.JFrame {
         search.setBackground(new java.awt.Color(29, 113, 81));
         search.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         search.setForeground(new java.awt.Color(255, 255, 255));
+        search.setBorder(null);
         search.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -394,7 +396,7 @@ public class AdminPage extends javax.swing.JFrame {
 
             ImageIcon image = new ImageIcon(img);
             Image im = image.getImage();
-            Image myImg = im.getScaledInstance(300, 368, Image.SCALE_SMOOTH);
+            Image myImg = im.getScaledInstance(423, 255, Image.SCALE_SMOOTH);
             ImageIcon newImage = new ImageIcon(myImg);
 
             lbl_img.setIcon(newImage);
@@ -426,7 +428,7 @@ public class AdminPage extends javax.swing.JFrame {
             if (rs.next()) {
                 img = rs.getBytes("image_file");
                 if (img != null) {
-                    ImageViewer view = new ImageViewer();
+                    AMImageViewer view = new AMImageViewer();
                     view.setTitle("Image View");
                     view.setVisible(true);
                     view.pack();
@@ -435,15 +437,15 @@ public class AdminPage extends javax.swing.JFrame {
 
                     ImageIcon image = new ImageIcon(img);
                     Image im = image.getImage();
-                    Image myImg = im.getScaledInstance(475, 487, Image.SCALE_SMOOTH);
+                    Image myImg = im.getScaledInstance(477, 489, Image.SCALE_SMOOTH);
                     ImageIcon newImage = new ImageIcon(myImg);
 
-                    ImageViewer.lblImageView.setIcon(newImage);
-                    ImageViewer.lblArtistname.setText(rs.getString("Artist_name"));
-                    ImageViewer.lblSchoolyear.setText(rs.getString("School_year"));
-                    ImageViewer.lblEmail.setText(rs.getString("Email_address"));
-                    ImageViewer.lblArt.setText(rs.getString("User_Art"));
-                    ImageViewer.txtArtDesc.setText(rs.getString("User_Art_Desc"));
+                    AMImageViewer.lblImageView.setIcon(newImage);
+                    AMImageViewer.lblArtistname.setText(rs.getString("Artist_name"));
+                    AMImageViewer.lblSchoolyear.setText(rs.getString("School_year"));
+                    AMImageViewer.lblEmail.setText(rs.getString("Email_address"));
+                    AMImageViewer.lblArt.setText(rs.getString("User_Art"));
+                    AMImageViewer.txtArtDesc.setText(rs.getString("User_Art_Desc"));
 
                     // Close the current frame
                     this.dispose();
@@ -486,7 +488,7 @@ public class AdminPage extends javax.swing.JFrame {
 
             ImageIcon ii = new ImageIcon(path);
 
-            Image img = ii.getImage().getScaledInstance(298, 366, Image.SCALE_SMOOTH);
+            Image img = ii.getImage().getScaledInstance(423, 255, Image.SCALE_SMOOTH);
 
             lbl_img.setIcon(new ImageIcon(img));
 
@@ -568,45 +570,72 @@ public class AdminPage extends javax.swing.JFrame {
 
     private void lblUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUpdateMouseClicked
         // TODO add your handling code here:
-        //        //database connection
+
+        int lblId = Integer.parseInt(id.getText());
+        String artistName = Artistname.getText();
+        String schoolYear = Schoolyear.getSelectedItem().toString();
+        String emailAddress = Emailaddress.getText();
+        String userArt = UserArt.getText();
+        String userArtDesc = UserArtDesc.getText();
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/humss_db", "root", "");
 
-            //GET THE QUERY INFO
-            int row = Table.getSelectedRow();
-            String value = (Table.getModel().getValueAt(row, 0).toString());
-            String query = "UPDATE users SET Artist_name=?, School_year=?, Email_address=?, User_Art=?, User_Art_Desc=?, image_name=?, image_file=? WHERE id=" + value;
+            // Check if the id exists in the database
+            String checkQuery = "SELECT COUNT(*) FROM users WHERE id = ?";
+            PreparedStatement checkPst = con.prepareStatement(checkQuery);
+            checkPst.setInt(1, lblId);
+            ResultSet rs = checkPst.executeQuery();
+            rs.next();
+            int count = rs.getInt(1);
+            checkPst.close();
 
-            PreparedStatement pst = con.prepareStatement(query);
-            pst.setString(1, Artistname.getText());
-            String School_year = Schoolyear.getSelectedItem().toString();
-            pst.setString(2, School_year);
-            pst.setString(3, Emailaddress.getText());
-            pst.setString(4, UserArt.getText());
-            pst.setString(5, UserArtDesc.getText());
-            pst.setString(6, lbl_img.getText());
+            if (count > 0) {
+                // Update data
+                String updateQuery = "UPDATE users SET Artist_name = ?, School_year = ?, Email_address = ?, User_Art = ?, User_Art_Desc = ? WHERE id = ?";
 
-            // Update the image_file field
-            if (path != null) {
-                File f = new File(path);
-                FileInputStream fis = new FileInputStream(f);
-                pst.setBinaryStream(7, fis, fis.available());
+                if (artistName.isEmpty()) {
+                    JOptionPane.showMessageDialog(this, "Invalid Artist Name!");
+                } else if (emailAddress.isEmpty()) {
+                    JOptionPane.showMessageDialog(this, "Invalid Email Address");
+                } else if (userArtDesc.isEmpty()) {
+                    JOptionPane.showMessageDialog(this, "Invalid Art Description");
+                } else {
+                    PreparedStatement pst = con.prepareStatement(updateQuery);
+                    pst.setString(1, artistName);
+                    pst.setString(2, schoolYear);
+                    pst.setString(3, emailAddress);
+                    pst.setString(4, userArt);
+                    pst.setString(5, userArtDesc);
+                    pst.setInt(6, lblId);
+
+                    int rowsUpdated = pst.executeUpdate();
+
+                    if (rowsUpdated > 0) {
+                        JOptionPane.showMessageDialog(this, "Record updated successfully!");
+
+                        // Refresh code block
+                        DefaultTableModel model = (DefaultTableModel) Table.getModel();
+                        model.setRowCount(0);
+                        showTableData();
+
+                        JOptionPane.showMessageDialog(this, "Updated");
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Failed to update the record!");
+                    }
+
+                    pst.close();
+                }
             } else {
-                pst.setNull(7, Types.BLOB);
+                JOptionPane.showMessageDialog(this, "ID not found in the database!");
             }
 
-            pst.executeUpdate();
-
-            // Refresh code block
-            DefaultTableModel model = (DefaultTableModel) Table.getModel();
-            model.setRowCount(0);
-            showTableData();
-
-            JOptionPane.showMessageDialog(this, "Art Updated!!!");
-        } catch (ClassNotFoundException | SQLException | IOException e) {
+            con.close();
+        } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e);
         }
+
     }//GEN-LAST:event_lblUpdateMouseClicked
 
     private void lblResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblResetMouseClicked
@@ -664,25 +693,10 @@ public class AdminPage extends javax.swing.JFrame {
 
     private void lblJasperMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJasperMouseClicked
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            myCon = DriverManager.getConnection("jdbc:mysql://localhost/humss_db", "root", "");
-            JasperDesign jdesign = JRXmlLoader.load("C:\\Users\\Kurt Pascua\\OneDrive\\Documents\\NetBeansProjects\\Humss-Arts-Museum\\src\\Main\\report.jrxml");
-            String query = "SELECT * FROM users";
-
-            JRDesignQuery updateQuery = new JRDesignQuery();
-            updateQuery.setText(query);
-
-            jdesign.setQuery(updateQuery);
-
-            JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-            JasperPrint jprint = JasperFillManager.fillReport(jreport, null, myCon);
-            JasperViewer viewer = new JasperViewer(jprint, false);
-            viewer.setAlwaysOnTop(true);
-            viewer.setVisible(true);
-            viewer.toFront();
-        } catch (ClassNotFoundException | JRException | SQLException ex) {
-            java.util.logging.Logger.getLogger(AdminPage.class.getName()).log(Level.SEVERE, null, ex);
+            Print_Report_Viewer jasrep = new Print_Report_Viewer();
+            jasrep.setVisible(true);
+                    this.dispose();
+        } catch (Exception e) {
         }
     }//GEN-LAST:event_lblJasperMouseClicked
 

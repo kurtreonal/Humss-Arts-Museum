@@ -45,7 +45,7 @@ public class Landing_Page extends javax.swing.JFrame {
                 btnContact1MouseClicked(evt);
             }
         });
-        jPanel1.add(btnContact1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 669, 140, 30));
+        jPanel1.add(btnContact1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 650, 150, 30));
 
         btnContact.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         btnContact.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -56,7 +56,7 @@ public class Landing_Page extends javax.swing.JFrame {
                 btnContactMouseClicked(evt);
             }
         });
-        jPanel1.add(btnContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 669, 140, 30));
+        jPanel1.add(btnContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 650, 140, 30));
 
         labelHeading1.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
         labelHeading1.setForeground(new java.awt.Color(254, 251, 234));
@@ -64,15 +64,15 @@ public class Landing_Page extends javax.swing.JFrame {
         jPanel1.add(labelHeading1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 550, -1, -1));
 
         btnDisplay.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        btnDisplay.setForeground(new java.awt.Color(255, 255, 255));
         btnDisplay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnDisplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/paint.png"))); // NOI18N
-        btnDisplay.setText("Humss Arts");
+        btnDisplay.setText("GETS STARTED");
         btnDisplay.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnDisplayMouseClicked(evt);
             }
         });
-        jPanel1.add(btnDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 670, 140, 30));
+        jPanel1.add(btnDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 392, 200, 30));
 
         btnDisplayPage.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         btnDisplayPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -83,7 +83,7 @@ public class Landing_Page extends javax.swing.JFrame {
                 btnDisplayPageMouseClicked(evt);
             }
         });
-        jPanel1.add(btnDisplayPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 140, 30));
+        jPanel1.add(btnDisplayPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 650, 140, 30));
 
         btnAdminPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -92,16 +92,16 @@ public class Landing_Page extends javax.swing.JFrame {
         });
         jPanel1.add(btnAdminPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 540, 120, 110));
 
-        btnLogout.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnLogout.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnLogout.setText("Logout");
+        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/logout.png"))); // NOI18N
         btnLogout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnLogoutMouseClicked(evt);
             }
         });
-        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 110, 40));
+        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 20, 60, 50));
 
         labelWrapper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/LANDING PAGE.png"))); // NOI18N
         jPanel1.add(labelWrapper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));

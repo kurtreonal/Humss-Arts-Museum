@@ -47,7 +47,7 @@ public class ImageViewer extends javax.swing.JFrame {
         id = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
+        setTitle("Image Viewer");
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -62,23 +62,23 @@ public class ImageViewer extends javax.swing.JFrame {
                 lblImageViewMouseEntered(evt);
             }
         });
-        jPanel1.add(lblImageView, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 113, 475, 487));
+        jPanel1.add(lblImageView, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 122, 477, 489));
 
         lblArtistname.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
         lblArtistname.setForeground(new java.awt.Color(193, 216, 191));
-        jPanel1.add(lblArtistname, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 100, 350, 30));
+        jPanel1.add(lblArtistname, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 120, 340, 40));
 
         lblSchoolyear.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
         lblSchoolyear.setForeground(new java.awt.Color(193, 216, 191));
-        jPanel1.add(lblSchoolyear, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 150, 350, 30));
+        jPanel1.add(lblSchoolyear, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 180, 340, 40));
 
         lblEmail.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(193, 216, 191));
-        jPanel1.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 200, 350, 30));
+        jPanel1.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 250, 340, 40));
 
         lblArt.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
         lblArt.setForeground(new java.awt.Color(193, 216, 191));
-        jPanel1.add(lblArt, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 250, 350, 30));
+        jPanel1.add(lblArt, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 310, 340, 40));
 
         txtArtDesc.setEditable(false);
         txtArtDesc.setBackground(new java.awt.Color(29, 113, 81));
@@ -91,7 +91,7 @@ public class ImageViewer extends javax.swing.JFrame {
         txtArtDesc.setBorder(null);
         jScrollPane2.setViewportView(txtArtDesc);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 300, 350, 160));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 370, -1, 170));
 
         btnBack.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
@@ -102,7 +102,7 @@ public class ImageViewer extends javax.swing.JFrame {
                 btnBackMouseClicked(evt);
             }
         });
-        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 110, 40));
+        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 23, 90, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Image Viewer.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -113,11 +113,11 @@ public class ImageViewer extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1280, 720));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+ 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        Landing_Page LP = new Landing_Page();
-        LP.show();
-
+        Display DP = new Display();
+        DP.show();
+        
         dispose();
     }//GEN-LAST:event_btnBackMouseClicked
 

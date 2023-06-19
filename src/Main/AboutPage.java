@@ -29,11 +29,12 @@ public class AboutPage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnExit = new javax.swing.JButton();
         btnAdminPage1 = new javax.swing.JLabel();
+        btnBack = new javax.swing.JLabel();
         lblWrapper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("About ");
         setAlwaysOnTop(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -41,23 +42,23 @@ public class AboutPage extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(51, 80, 49));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnExit.setBackground(new java.awt.Color(51, 51, 51));
-        btnExit.setForeground(new java.awt.Color(255, 255, 255));
-        btnExit.setText("BACK");
-        btnExit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        btnExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExitActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 60, 20));
-
         btnAdminPage1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAdminPage1MouseClicked(evt);
             }
         });
         jPanel1.add(btnAdminPage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 590, 110, 110));
+
+        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnBack.setText("Back");
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 70, 40));
 
         lblWrapper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/ABOUT PAGE.png"))); // NOI18N
         jPanel1.add(lblWrapper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -68,14 +69,6 @@ public class AboutPage extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        // TODO add your handling code here:
-        Landing_Page jf1 = new Landing_Page();
-        jf1.show();
-
-        dispose();
-    }//GEN-LAST:event_btnExitActionPerformed
-
     private void btnAdminPage1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminPage1MouseClicked
         // TODO add your handling code here:
         Landing_Page LP = new Landing_Page();
@@ -83,6 +76,13 @@ public class AboutPage extends javax.swing.JFrame {
 
         dispose();
     }//GEN-LAST:event_btnAdminPage1MouseClicked
+
+    private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
+        Landing_Page LP = new Landing_Page();
+        LP.show();
+
+        dispose();
+    }//GEN-LAST:event_btnBackMouseClicked
 
     /**
      * @param args the command line arguments
@@ -123,7 +123,7 @@ public class AboutPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnAdminPage1;
-    private javax.swing.JButton btnExit;
+    private javax.swing.JLabel btnBack;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblWrapper;
     // End of variables declaration//GEN-END:variables
