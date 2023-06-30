@@ -71,27 +71,27 @@ FROM
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="79" y="19" width="79" height="15" uuid="94ce9bd0-1014-46a3-9166-32e8e47cbddf"/>
-				<text><![CDATA[Artist_name]]></text>
+				<text><![CDATA[Artist Name]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="158" y="19" width="79" height="15" uuid="fc5d21e8-86d0-4a80-925d-f9da35331c03"/>
-				<text><![CDATA[School_year]]></text>
+				<text><![CDATA[School Year]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="237" y="19" width="79" height="15" uuid="9d9bd6fd-0224-4ee6-98e8-17e8fe65b87e"/>
-				<text><![CDATA[Email_address]]></text>
+				<text><![CDATA[Email Address]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="316" y="19" width="79" height="15" uuid="7dff89cb-1d4d-41a7-9b79-7b60b1a222f6"/>
-				<text><![CDATA[User_Art]]></text>
+				<text><![CDATA[Art Title]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="395" y="19" width="79" height="15" uuid="f5b23ac0-bf98-4b52-ac53-7e640f778cb2"/>
-				<text><![CDATA[User_Art_Desc]]></text>
+				<text><![CDATA[Description]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="474" y="19" width="79" height="15" uuid="2350523b-52db-4837-9434-8b80160bb47b"/>
-				<text><![CDATA[image_name]]></text>
+				<text><![CDATA[Image Name]]></text>
 			</staticText>
 		</band>
 	</columnHeader>

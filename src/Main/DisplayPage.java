@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.ByteArrayInputStream;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -17,6 +18,8 @@ public class DisplayPage extends javax.swing.JFrame {
 
     public DisplayPage() {
         initComponents();
+        setLocationRelativeTo(null);
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/assets/HUMSS_LOGO.png")));
         displayDataFromDatabase();
     }
 

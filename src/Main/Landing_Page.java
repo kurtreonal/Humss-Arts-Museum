@@ -1,5 +1,6 @@
 package Main;
 
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 public class Landing_Page extends javax.swing.JFrame {
@@ -8,6 +9,8 @@ public class Landing_Page extends javax.swing.JFrame {
     
     public Landing_Page() {
         initComponents();
+        setLocationRelativeTo(null);
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/assets/HUMSS_LOGO.png")));
     }
 
     @SuppressWarnings("unchecked")

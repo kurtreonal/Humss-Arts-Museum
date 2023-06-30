@@ -5,6 +5,7 @@
 package Main;
 
 import java.awt.Desktop;
+import java.awt.Toolkit;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -20,6 +21,8 @@ public class ContactPage extends javax.swing.JFrame {
      */
     public ContactPage() {
         initComponents();
+        setLocationRelativeTo(null);
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/assets/HUMSS_LOGO.png")));
     }
 
     /**

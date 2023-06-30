@@ -6,6 +6,7 @@
 package Main;
 
 import java.awt.BorderLayout;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -33,6 +34,8 @@ public class Print_Report_Viewer extends javax.swing.JFrame {
      */
     public Print_Report_Viewer() {
         initComponents();
+        setLocationRelativeTo(null);
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/assets/HUMSS_LOGO.png")));
         printReport();
         
     }
@@ -55,7 +58,7 @@ public class Print_Report_Viewer extends javax.swing.JFrame {
             
             JRViewer v = new JRViewer(jprint);
             
-            jasrep.setLayout(new BorderLayout(600, 800));
+            jasrep.setLayout(new BorderLayout(1280, 720));
             jasrep.add(v);
 
 //            Class.forName("com.mysql.cj.jdbc.Driver");
@@ -93,35 +96,57 @@ public class Print_Report_Viewer extends javax.swing.JFrame {
     private void initComponents() {
 
         jasrep = new javax.swing.JPanel();
+        BACK = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
+
+        BACK.setBackground(new java.awt.Color(0, 204, 0));
+        BACK.setText("BACK");
+        BACK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BACKActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jasrepLayout = new javax.swing.GroupLayout(jasrep);
         jasrep.setLayout(jasrepLayout);
         jasrepLayout.setHorizontalGroup(
             jasrepLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 827, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jasrepLayout.createSequentialGroup()
+                .addContainerGap(1221, Short.MAX_VALUE)
+                .addComponent(BACK)
+                .addContainerGap())
         );
         jasrepLayout.setVerticalGroup(
             jasrepLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
+            .addGroup(jasrepLayout.createSequentialGroup()
+                .addComponent(BACK)
+                .addGap(0, 726, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jasrep, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jasrep, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jasrep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 92, Short.MAX_VALUE))
+            .addComponent(jasrep, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BACKActionPerformed
+        // TODO add your handling code here:
+        AdminPage AP = new AdminPage();
+        AP.show();
+
+        dispose();
+    }//GEN-LAST:event_BACKActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,6 +184,11 @@ public class Print_Report_Viewer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BACK;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnExit1;
+    private javax.swing.JButton btnExit2;
+    private javax.swing.JButton btnExit3;
     private javax.swing.JPanel jasrep;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,10 +1,13 @@
 package Main;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.*;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.logging.Level;
@@ -31,6 +34,8 @@ public class AdminPage extends javax.swing.JFrame {
     
     public AdminPage() {
         initComponents();
+        setLocationRelativeTo(null);
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/assets/HUMSS_LOGO.png")));
         showTableData();
     }
     
@@ -41,7 +46,7 @@ public class AdminPage extends javax.swing.JFrame {
             Connection myConn = ConDB.getConnection();
 
             String sqlSign = "SELECT id as 'No.', Artist_name as 'Artist Name', School_year as 'School Year', "
-                    + "Email_address as 'Email Address', User_Art as 'Art Title', User_Art_Desc as 'Art Description', `image_name` as 'Image Name' FROM users";
+                    + "section as 'Section', Email_address as 'Email Address', User_Art as 'Art Title', User_Art_Desc as 'Art Description', `image_name` as 'Image Name' FROM users";
 
             PreparedStatement ps = myConn.prepareStatement(sqlSign);
 
@@ -52,7 +57,6 @@ public class AdminPage extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println(e);
         }
-
     }
     
     /**
@@ -65,11 +69,12 @@ public class AdminPage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane1 = new raven.scroll.win11.ScrollPaneWin11();
         Table = new javax.swing.JTable();
         lbl_img = new javax.swing.JLabel();
         Artistname = new javax.swing.JTextField();
         Schoolyear = new javax.swing.JComboBox<String>();
+        stSection = new javax.swing.JComboBox<String>();
         Emailaddress = new javax.swing.JTextField();
         UserArt = new javax.swing.JTextField();
         UserArtDesc = new javax.swing.JTextField();
@@ -88,7 +93,6 @@ public class AdminPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Admin Page");
-        setAlwaysOnTop(true);
         setUndecorated(true);
         setResizable(false);
         setSize(new java.awt.Dimension(758, 0));
@@ -98,20 +102,21 @@ public class AdminPage extends javax.swing.JFrame {
 
         Table.setBackground(new java.awt.Color(29, 113, 81));
         Table.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(255, 255, 255)));
-        Table.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        Table.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         Table.setForeground(new java.awt.Color(255, 255, 255));
         Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "id", "Artist Name", "School Year", "Email Address", "Art Title", "Art Description"
+                "id", "Artist Name", "School Year", "Section", "Email Address", "Art Title", "Art Description"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -129,7 +134,7 @@ public class AdminPage extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Table);
         if (Table.getColumnModel().getColumnCount() > 0) {
-            Table.getColumnModel().getColumn(5).setPreferredWidth(500);
+            Table.getColumnModel().getColumn(6).setPreferredWidth(500);
         }
         Table.getAccessibleContext().setAccessibleParent(jPanel1);
 
@@ -151,14 +156,26 @@ public class AdminPage extends javax.swing.JFrame {
                 ArtistnameActionPerformed(evt);
             }
         });
-        jPanel1.add(Artistname, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 368, 50));
+        jPanel1.add(Artistname, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 368, 40));
 
         Schoolyear.setBackground(new java.awt.Color(29, 113, 81));
         Schoolyear.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         Schoolyear.setForeground(new java.awt.Color(255, 255, 255));
         Schoolyear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2016-2017", "2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024", "2024-2025", "2025-2026", "2026-2027", "2027-2028", "2028-2029", "2029-2030" }));
         Schoolyear.setBorder(null);
-        jPanel1.add(Schoolyear, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 368, 50));
+        jPanel1.add(Schoolyear, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 165, 365, 40));
+
+        stSection.setBackground(new java.awt.Color(29, 113, 81));
+        stSection.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        stSection.setForeground(new java.awt.Color(255, 255, 255));
+        stSection.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "(No Section)", "HUMSS 11-A", "HUMSS 11-B", "HUMSS 11-C", "HUMSS 11-D", "HUMSS 11-E", "HUMSS 11-F", "HUMSS 11-G", "HUMSS 12-A", "HUMSS 12-B", "HUMSS 12-C", "HUMSS 12-D", "HUMSS 12-E", "HUMSS 12-F", "HUMSS 12-G", "HUMSS 12-H", "HUMSS 12-I", "HUMSS 12-J", "HUMSS 12-K" }));
+        stSection.setBorder(null);
+        stSection.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stSectionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(stSection, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 210, 365, 40));
 
         Emailaddress.setBackground(new java.awt.Color(29, 113, 81));
         Emailaddress.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -169,13 +186,13 @@ public class AdminPage extends javax.swing.JFrame {
                 EmailaddressActionPerformed(evt);
             }
         });
-        jPanel1.add(Emailaddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 368, 50));
+        jPanel1.add(Emailaddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 255, 368, 40));
 
         UserArt.setBackground(new java.awt.Color(29, 113, 81));
         UserArt.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         UserArt.setForeground(new java.awt.Color(255, 255, 255));
         UserArt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel1.add(UserArt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 368, 50));
+        jPanel1.add(UserArt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 368, 40));
 
         UserArtDesc.setBackground(new java.awt.Color(29, 113, 81));
         UserArtDesc.setColumns(5);
@@ -188,7 +205,7 @@ public class AdminPage extends javax.swing.JFrame {
                 UserArtDescActionPerformed(evt);
             }
         });
-        jPanel1.add(UserArtDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 368, 150));
+        jPanel1.add(UserArtDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 345, 368, 120));
 
         txt_name.setForeground(new java.awt.Color(51, 80, 49));
         jPanel1.add(txt_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
@@ -202,7 +219,7 @@ public class AdminPage extends javax.swing.JFrame {
                 btnImageMouseClicked(evt);
             }
         });
-        jPanel1.add(btnImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 390, 90, 20));
+        jPanel1.add(btnImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 390, 100, 20));
 
         lblSave.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         lblSave.setForeground(new java.awt.Color(254, 251, 234));
@@ -233,6 +250,9 @@ public class AdminPage extends javax.swing.JFrame {
         lblReset.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblResetMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblResetMouseEntered(evt);
             }
         });
         jPanel1.add(lblReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 506, 80, 20));
@@ -276,7 +296,7 @@ public class AdminPage extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, 60, 40));
 
         search.setBackground(new java.awt.Color(29, 113, 81));
-        search.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        search.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         search.setForeground(new java.awt.Color(255, 255, 255));
         search.setBorder(null);
         search.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -325,15 +345,17 @@ public class AdminPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableMouseClicked
-       try {
-           int i = Table.getSelectedRow();
-           TableModel model = Table.getModel();
-           String idValue = model.getValueAt(i, 0).toString(); // Assuming the id column is the first column
-           id.setText(idValue);
-        Artistname.setText(model.getValueAt(i, 1).toString());
-        String School_year = model.getValueAt(i, 2).toString();
-        switch (School_year) {
-                           case "2016-2017":
+        try {
+            int i = Table.getSelectedRow();
+            TableModel model = Table.getModel();
+            String idValue = model.getValueAt(i, 0).toString(); // Assuming the id column is the first column
+            id.setText(idValue);
+            Artistname.setText(model.getValueAt(i, 1).toString());
+
+            // Set the selected value for the Schoolyear combo box
+            String schoolYear = model.getValueAt(i, 2).toString();
+            switch (schoolYear) {
+                case "2016-2017":
                     Schoolyear.setSelectedIndex(0);
                     break;
                 case "2017-2018":
@@ -375,35 +397,119 @@ public class AdminPage extends javax.swing.JFrame {
                 case "2029-2030":
                     Schoolyear.setSelectedIndex(13);
                     break;
+                default:
+                    Schoolyear.setSelectedIndex(-1); // Set default selection if value doesn't match any case
+                    break;
+            }
 
+            // Set the selected value for the stSection combo box
+            String section = model.getValueAt(i, 3).toString();
+            switch (section) {
+                case "(No Section)":
+                    stSection.setSelectedIndex(0);
+                    break;
+                case "HUMSS 11-A":
+                    stSection.setSelectedIndex(0);
+                    break;
+                case "HUMSS 11-B":
+                    stSection.setSelectedIndex(1);
+                    break;
+                case "HUMSS 11-C":
+                    stSection.setSelectedIndex(2);
+                    break;
+                case "HUMSS 11-D":
+                    stSection.setSelectedIndex(3);
+                    break;
+                case "HUMSS 11-E":
+                    stSection.setSelectedIndex(4);
+                    break;
+                case "HUMSS 11-F":
+                    stSection.setSelectedIndex(5);
+                    break;
+                case "HUMSS 11-G":
+                    stSection.setSelectedIndex(6);
+                    break;
+                case "HUMSS 12-A":
+                    stSection.setSelectedIndex(7);
+                    break;
+                case "HUMSS 12-B":
+                    stSection.setSelectedIndex(8);
+                    break;
+                case "HUMSS 12-C":
+                    stSection.setSelectedIndex(9);
+                    break;
+                case "HUMSS 12-D":
+                    stSection.setSelectedIndex(10);
+                    break;
+                case "HUMSS 12-E":
+                    stSection.setSelectedIndex(11);
+                    break;
+                case "HUMSS 12-F":
+                    stSection.setSelectedIndex(12);
+                    break;
+                case "HUMSS 12-G":
+                    stSection.setSelectedIndex(13);
+                    break;
+                case "HUMSS 12-H":
+                    stSection.setSelectedIndex(14);
+                    break;
+                case "HUMSS 12-I":
+                    stSection.setSelectedIndex(14);
+                    break;
+                case "HUMSS 12-J":
+                    stSection.setSelectedIndex(14);
+                    break;
+                case "HUMSS 12-K":
+                    stSection.setSelectedIndex(14);
+                    break;
+                default:
+                    stSection.setSelectedIndex(-1); // Set default selection if value doesn't match any case
+                    break;
+            }
+
+            Emailaddress.setText(model.getValueAt(i, 4).toString());
+            UserArt.setText(model.getValueAt(i, 5).toString());
+            UserArtDesc.setText(model.getValueAt(i, 6).toString());
+
+            // Get the ID from the clicked table data
+            String clickedId = model.getValueAt(i, 0).toString();
+
+            // Retrieve the image_file from the database based on the clicked ID
+            Connection myConn = ConDB.getConnection();
+            PreparedStatement pst = myConn.prepareStatement("SELECT image_file FROM users WHERE id = ?");
+            pst.setString(1, clickedId);
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                Blob imageBlob = rs.getBlob("image_file");
+                if (imageBlob != null) {
+                    byte[] img = imageBlob.getBytes(1, (int) imageBlob.length());
+
+                    // Create a temporary file to store the image
+                    File tempFile = File.createTempFile("temp", ".tmp");
+                    FileOutputStream fos = new FileOutputStream(tempFile);
+                    fos.write(img);
+                    fos.close();
+
+                    // Load the image from the temporary file
+                    ImageIcon image = new ImageIcon(tempFile.getAbsolutePath());
+                    Image im = image.getImage();
+                    Image myImg = im.getScaledInstance(423, 255, Image.SCALE_SMOOTH);
+                    ImageIcon newImage = new ImageIcon(myImg);
+
+                    lbl_img.setIcon(newImage);
+
+                    // Delete the temporary file
+                    tempFile.delete();
+                } else {
+                    lbl_img.setIcon(null);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e);
         }
-        Emailaddress.setText(model.getValueAt(i, 3).toString());
-        UserArt.setText(model.getValueAt(i, 4).toString());
-        UserArtDesc.setText(model.getValueAt(i, 5).toString());
 
-        // Get the ID from the clicked table data
-        String clickedId = model.getValueAt(i, 0).toString();
 
-        //DATABASE CONNECTION
-        Connection myConn = ConDB.getConnection();
-        Statement st = myConn.createStatement();
-
-        // Retrieve the image_file from the database based on the clicked ID
-        ResultSet rs = st.executeQuery("SELECT image_file FROM users WHERE id='" + clickedId + "'");
-
-        if (rs.next()) {
-            byte[] img = rs.getBytes("image_file");
-
-            ImageIcon image = new ImageIcon(img);
-            Image im = image.getImage();
-            Image myImg = im.getScaledInstance(423, 255, Image.SCALE_SMOOTH);
-            ImageIcon newImage = new ImageIcon(myImg);
-
-            lbl_img.setIcon(newImage);
-        }
-    } catch (Exception e) {
-        System.out.println(e);
-    }
     }//GEN-LAST:event_TableMouseClicked
 
     private void UserArtDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserArtDescActionPerformed
@@ -443,6 +549,7 @@ public class AdminPage extends javax.swing.JFrame {
                     AMImageViewer.lblImageView.setIcon(newImage);
                     AMImageViewer.lblArtistname.setText(rs.getString("Artist_name"));
                     AMImageViewer.lblSchoolyear.setText(rs.getString("School_year"));
+                    AMImageViewer.lblstSection.setText(rs.getString("section"));
                     AMImageViewer.lblEmail.setText(rs.getString("Email_address"));
                     AMImageViewer.lblArt.setText(rs.getString("User_Art"));
                     AMImageViewer.txtArtDesc.setText(rs.getString("User_Art_Desc"));
@@ -497,37 +604,38 @@ public class AdminPage extends javax.swing.JFrame {
 
     private void lblSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSaveMouseClicked
         // TODO add your handling code here:
-        
+
         String ArtistName = Artistname.getText();
         String emailAddress = Emailaddress.getText();
         String userArtDesc = UserArtDesc.getText();
+        String userArt = UserArt.getText();
+        String section = stSection.getSelectedItem().toString(); // Get selected section from combo box
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/humss_db", "root", "");
 
             // Check if the data already exists
-            String checkQuery = "SELECT COUNT(*) FROM users WHERE User_Art_Desc = ? OR Email_address = ?";
+            String checkQuery = "SELECT COUNT(*) FROM users WHERE Email_address = ?";
             PreparedStatement checkPst = con.prepareStatement(checkQuery);
-            checkPst.setString(1, userArtDesc);
-            checkPst.setString(2, emailAddress);
+            checkPst.setString(1, emailAddress);
             ResultSet rs = checkPst.executeQuery();
             rs.next();
             int count = rs.getInt(1);
             checkPst.close();
 
             if (count > 0) {
-                JOptionPane.showMessageDialog(this, "Data already exists!"); // Show an error message if the data already exists
+                JOptionPane.showMessageDialog(this, "Email Address already exists!"); // Show an error message if the data already exists
             } else {
                 // Insert data
-                String insertQuery = "INSERT INTO users(Artist_name, School_year, Email_address, User_Art, User_Art_Desc, image_name, image_file) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                String insertQuery = "INSERT INTO users(Artist_name, School_year, Email_address, User_Art, User_Art_Desc, image_name, image_file, section) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
                 if (ArtistName.equals("")) {
                     JOptionPane.showMessageDialog(this, "Invalid Artist Name!");
-
                 } else if (emailAddress.equals("")) {
                     JOptionPane.showMessageDialog(this, "Invalid Email Address");
-                } else if (userArtDesc.equals("")) {
+                } else if (emailAddress.equals("")) {
+                    JOptionPane.showMessageDialog(this, "Invalid Art Title");
+                } else if (userArt.equals("")) {
                     JOptionPane.showMessageDialog(this, "Invalid Art Description");
                 } else if (path == null) {
                     JOptionPane.showMessageDialog(this, "No Image Found!");
@@ -536,15 +644,17 @@ public class AdminPage extends javax.swing.JFrame {
 
                     PreparedStatement pst = con.prepareStatement(insertQuery);
 
-                    try ( InputStream is = new FileInputStream(f)) {
+                    try (InputStream is = new FileInputStream(f)) {
                         pst.setString(1, Artistname.getText());
                         String School_year = Schoolyear.getSelectedItem().toString();
                         pst.setString(2, School_year);
                         pst.setString(3, emailAddress);
-                        pst.setString(4, UserArt.getText());
+                        pst.setString(4, userArt);
                         pst.setString(5, userArtDesc);
                         pst.setString(6, f.getName());
                         pst.setBlob(7, is);
+                        pst.setString(8, section); // Set the section value
+
                         int rowInserted = pst.executeUpdate();
                         if (rowInserted > 0) {
                             JOptionPane.showMessageDialog(this, "Recorded!");
@@ -563,79 +673,68 @@ public class AdminPage extends javax.swing.JFrame {
             }
 
             con.close();
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
     }//GEN-LAST:event_lblSaveMouseClicked
 
     private void lblUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUpdateMouseClicked
-        // TODO add your handling code here:
-
-        int lblId = Integer.parseInt(id.getText());
-        String artistName = Artistname.getText();
-        String schoolYear = Schoolyear.getSelectedItem().toString();
-        String emailAddress = Emailaddress.getText();
-        String userArt = UserArt.getText();
-        String userArtDesc = UserArtDesc.getText();
-
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            // Get the selected row index
+            int rowIndex = Table.getSelectedRow();
+
+            // Get the value from the ID column of the selected row
+            String id = Table.getValueAt(rowIndex, 0).toString();
+
+            // Prepare the update query
+            String query = "UPDATE users SET Artist_name=?, School_year=?, section=?, Email_address=?, User_Art=?, User_Art_Desc=?, image_name=?, image_file=? WHERE id=?";
+
+            // Establish the database connection
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/humss_db", "root", "");
 
-            // Check if the id exists in the database
-            String checkQuery = "SELECT COUNT(*) FROM users WHERE id = ?";
-            PreparedStatement checkPst = con.prepareStatement(checkQuery);
-            checkPst.setInt(1, lblId);
-            ResultSet rs = checkPst.executeQuery();
-            rs.next();
-            int count = rs.getInt(1);
-            checkPst.close();
+            // Create the prepared statement
+            PreparedStatement pst = con.prepareStatement(query);
+            pst.setString(1, Artistname.getText());
+            pst.setString(2, Schoolyear.getSelectedItem().toString());
+            pst.setString(3, stSection.getSelectedItem().toString());
+            pst.setString(4, Emailaddress.getText());
+            pst.setString(5, UserArt.getText());
+            pst.setString(6, UserArtDesc.getText());
+            pst.setString(7, lbl_img.getText());
 
-            if (count > 0) {
-                // Update data
-                String updateQuery = "UPDATE users SET Artist_name = ?, School_year = ?, Email_address = ?, User_Art = ?, User_Art_Desc = ? WHERE id = ?";
-
-                if (artistName.isEmpty()) {
-                    JOptionPane.showMessageDialog(this, "Invalid Artist Name!");
-                } else if (emailAddress.isEmpty()) {
-                    JOptionPane.showMessageDialog(this, "Invalid Email Address");
-                } else if (userArtDesc.isEmpty()) {
-                    JOptionPane.showMessageDialog(this, "Invalid Art Description");
-                } else {
-                    PreparedStatement pst = con.prepareStatement(updateQuery);
-                    pst.setString(1, artistName);
-                    pst.setString(2, schoolYear);
-                    pst.setString(3, emailAddress);
-                    pst.setString(4, userArt);
-                    pst.setString(5, userArtDesc);
-                    pst.setInt(6, lblId);
-
-                    int rowsUpdated = pst.executeUpdate();
-
-                    if (rowsUpdated > 0) {
-                        JOptionPane.showMessageDialog(this, "Record updated successfully!");
-
-                        // Refresh code block
-                        DefaultTableModel model = (DefaultTableModel) Table.getModel();
-                        model.setRowCount(0);
-                        showTableData();
-
-                        JOptionPane.showMessageDialog(this, "Updated");
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Failed to update the record!");
-                    }
-
-                    pst.close();
-                }
-            } else {
-                JOptionPane.showMessageDialog(this, "ID not found in the database!");
+            // Check if the image_file is null
+            if (lbl_img.getIcon() == null) {
+                JOptionPane.showMessageDialog(this, "Please add a new image before updating.", "Image Required", JOptionPane.WARNING_MESSAGE);
+                return; // Abort the update operation
             }
 
-            con.close();
-        } catch (ClassNotFoundException | SQLException e) {
-            System.out.println(e);
-        }
+            // Update the image_file field
+            if (path != null) {
+                File f = new File(path);
+                FileInputStream fis = new FileInputStream(f);
+                pst.setBinaryStream(8, fis, fis.available());
+            } else {
+                pst.setNull(8, Types.BLOB);
+            }
 
+            pst.setString(9, id); // Set the ID value in the query
+
+            // Execute the update query
+            pst.executeUpdate();
+
+            // Refresh the table data
+            DefaultTableModel model = (DefaultTableModel) Table.getModel();
+            model.setRowCount(0);
+            showTableData();
+
+            JOptionPane.showMessageDialog(this, "Art Updated!!!");
+        } catch (SQLException | IOException e) {
+            if (e instanceof SQLIntegrityConstraintViolationException) {
+                JOptionPane.showMessageDialog(this, "Please add a new image before updating.", "Image Required", JOptionPane.WARNING_MESSAGE);
+            } else {
+                System.out.println(e);
+            }
+        }
     }//GEN-LAST:event_lblUpdateMouseClicked
 
     private void lblResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblResetMouseClicked
@@ -712,14 +811,15 @@ public class AdminPage extends javax.swing.JFrame {
             Connection myConn = ConDB.getConnection();
 
             String sqlSearch = "SELECT id as 'No.', Artist_name as 'Artist Name', School_year as 'School Year', "
-            + "Email_address as 'Email Address', User_Art as 'Art Title', User_Art_Desc as 'Art Description', `image_name` as 'Image Name' "
-            + "FROM users "
-            + "WHERE Artist_name LIKE ? OR User_Art LIKE ? OR School_year LIKE ?";
+                    + "section as 'Section', Email_address as 'Email Address', User_Art as 'Art Title', User_Art_Desc as 'Art Description', `image_name` as 'Image Name' "
+                    + "FROM users "
+                    + "WHERE Artist_name LIKE ? OR User_Art LIKE ? OR School_year LIKE ? OR section LIKE ?";
 
             PreparedStatement ps = myConn.prepareStatement(sqlSearch);
             ps.setString(1, "%" + searchTerm + "%"); // Use % wildcard to search for partial matches
             ps.setString(2, "%" + searchTerm + "%");
             ps.setString(3, "%" + searchTerm + "%");
+            ps.setString(4, "%" + searchTerm + "%"); // Set the search term for 'section'
 
             ResultSet rs = ps.executeQuery();
 
@@ -733,6 +833,14 @@ public class AdminPage extends javax.swing.JFrame {
     private void searchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_searchKeyTyped
+
+    private void lblResetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblResetMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblResetMouseEntered
+
+    private void stSectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stSectionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_stSectionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -790,6 +898,7 @@ public class AdminPage extends javax.swing.JFrame {
     private javax.swing.JLabel lblWrapper;
     private javax.swing.JLabel lbl_img;
     private javax.swing.JTextField search;
+    private javax.swing.JComboBox<String> stSection;
     private javax.swing.JLabel txt_name;
     // End of variables declaration//GEN-END:variables
 

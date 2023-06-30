@@ -2,6 +2,7 @@
 package Main;
 import java.awt.Image;
 import java.awt.MediaTracker;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.*;
@@ -19,6 +20,8 @@ public class Display extends javax.swing.JFrame {
     
     public Display() {
         initComponents();
+        setLocationRelativeTo(null);
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/assets/HUMSS_LOGO.png")));
         showTableData();
     }
     private void showTableData() {
@@ -26,7 +29,7 @@ public class Display extends javax.swing.JFrame {
             Connection myConn = ConDB.getConnection();
 
             String sqlSign = "SELECT id as 'No.', Artist_name as 'Artist Name', School_year as 'School Year', "
-                    + "Email_address as 'Email Address', User_Art as 'Art Title', User_Art_Desc as 'Art Description', `image_name` as 'Image Name' FROM users";
+                    + "section as 'Section', Email_address as 'Email Address', User_Art as 'Art Title', User_Art_Desc as 'Art Description', `image_name` as 'Image Name' FROM users";
 
             PreparedStatement ps = myConn.prepareStatement(sqlSign);
 
@@ -37,9 +40,7 @@ public class Display extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println(e);
         }
-
     }
-    //Instantiate lblImageView
 
 
     @SuppressWarnings("unchecked")
@@ -48,7 +49,8 @@ public class Display extends javax.swing.JFrame {
 
         id = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        btnView = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
         lbl_imgview = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
@@ -60,29 +62,45 @@ public class Display extends javax.swing.JFrame {
         id.setOpaque(true);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setAlwaysOnTop(true);
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(29, 113, 81));
-        jButton2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("View Art");
-        jButton2.setBorder(null);
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnView.setBackground(new java.awt.Color(29, 113, 81));
+        btnView.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        btnView.setForeground(new java.awt.Color(255, 255, 255));
+        btnView.setText("VIEW ART");
+        btnView.setBorder(null);
+        btnView.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                btnViewMouseClicked(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnViewActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 650, 90, 40));
+        jPanel1.add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 650, 90, 40));
+
+        btnClear.setBackground(new java.awt.Color(29, 113, 81));
+        btnClear.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        btnClear.setForeground(new java.awt.Color(255, 255, 255));
+        btnClear.setText("CLEAR");
+        btnClear.setBorder(null);
+        btnClear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnClearMouseClicked(evt);
+            }
+        });
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 650, 90, 40));
 
         lbl_imgview.setBackground(new java.awt.Color(51, 80, 49));
         lbl_imgview.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -90,7 +108,7 @@ public class Display extends javax.swing.JFrame {
                 lbl_imgviewMouseClicked(evt);
             }
         });
-        jPanel1.add(lbl_imgview, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 113, 500, 510));
+        jPanel1.add(lbl_imgview, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 113, 505, 510));
 
         Table.setBackground(new java.awt.Color(29, 113, 81));
         Table.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(255, 255, 255)));
@@ -98,25 +116,25 @@ public class Display extends javax.swing.JFrame {
         Table.setForeground(new java.awt.Color(255, 255, 255));
         Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "id", "Artist Name", "School Year", "Email Address", "Art Title", "Art Description"
+                "id", "Artist Name", "School Year", "Section", "Email Address", "Art Title", "Art Description"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -134,12 +152,12 @@ public class Display extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Table);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, 500, 460));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 200, 470, 430));
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(29, 113, 81));
         jLabel3.setText("Search:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, 80, 40));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 110, 80, 40));
 
         search.setBackground(new java.awt.Color(29, 113, 81));
         search.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -158,7 +176,7 @@ public class Display extends javax.swing.JFrame {
                 searchKeyTyped(evt);
             }
         });
-        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, 360, 40));
+        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 110, 360, 40));
 
         btnBack.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
@@ -202,7 +220,7 @@ public class Display extends javax.swing.JFrame {
 
                 ImageIcon image = new ImageIcon(img);
                 Image im = image.getImage();
-                Image myImg = im.getScaledInstance(500, 510, Image.SCALE_SMOOTH);
+                Image myImg = im.getScaledInstance(505, 510, Image.SCALE_SMOOTH);
                 ImageIcon newImage = new ImageIcon(myImg);
 
                 lbl_imgview.setIcon(newImage);
@@ -217,11 +235,11 @@ public class Display extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TableMouseEntered
 int x = 300;
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnViewActionPerformed
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void btnViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnViewMouseClicked
         // TODO add your handling code here:
         byte[] img = null;
         try {
@@ -247,6 +265,7 @@ int x = 300;
                     ImageViewer.lblImageView.setIcon(newImage);
                     ImageViewer.lblArtistname.setText(rs.getString("Artist_name"));
                     ImageViewer.lblSchoolyear.setText(rs.getString("School_year"));
+                    ImageViewer.lblstSection.setText(rs.getString("section"));
                     ImageViewer.lblEmail.setText(rs.getString("Email_address"));
                     ImageViewer.lblArt.setText(rs.getString("User_Art"));
                     ImageViewer.txtArtDesc.setText(rs.getString("User_Art_Desc"));
@@ -262,9 +281,10 @@ int x = 300;
         } catch (Exception e) {
             System.out.println(e);
         }
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_btnViewMouseClicked
 
     private void lbl_imgviewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_imgviewMouseClicked
+        // TODO add your handling code here:
         byte[] img = null;
         try {
             Connection myConn = ConDB.getConnection();
@@ -289,6 +309,7 @@ int x = 300;
                     ImageViewer.lblImageView.setIcon(newImage);
                     ImageViewer.lblArtistname.setText(rs.getString("Artist_name"));
                     ImageViewer.lblSchoolyear.setText(rs.getString("School_year"));
+                    ImageViewer.lblstSection.setText(rs.getString("section"));
                     ImageViewer.lblEmail.setText(rs.getString("Email_address"));
                     ImageViewer.lblArt.setText(rs.getString("User_Art"));
                     ImageViewer.txtArtDesc.setText(rs.getString("User_Art_Desc"));
@@ -318,14 +339,15 @@ int x = 300;
             Connection myConn = ConDB.getConnection();
 
             String sqlSearch = "SELECT id as 'No.', Artist_name as 'Artist Name', School_year as 'School Year', "
-            + "Email_address as 'Email Address', User_Art as 'Art Title', User_Art_Desc as 'Art Description', `image_name` as 'Image Name' "
-            + "FROM users "
-            + "WHERE Artist_name LIKE ? OR User_Art LIKE ? OR School_year LIKE ?";
+                    + "section as 'Section', Email_address as 'Email Address', User_Art as 'Art Title', User_Art_Desc as 'Art Description', `image_name` as 'Image Name' "
+                    + "FROM users "
+                    + "WHERE Artist_name LIKE ? OR User_Art LIKE ? OR School_year LIKE ? OR section LIKE ?";
 
             PreparedStatement ps = myConn.prepareStatement(sqlSearch);
             ps.setString(1, "%" + searchTerm + "%"); // Use % wildcard to search for partial matches
             ps.setString(2, "%" + searchTerm + "%");
             ps.setString(3, "%" + searchTerm + "%");
+            ps.setString(4, "%" + searchTerm + "%"); // Set the search term for 'section'
 
             ResultSet rs = ps.executeQuery();
 
@@ -346,6 +368,15 @@ int x = 300;
         
         dispose();
     }//GEN-LAST:event_btnBackMouseClicked
+
+    private void btnClearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClearMouseClicked
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        // TODO add your handling code here:
+        lbl_imgview.setIcon(null); // Reset the lbl_img which is the label container
+    }//GEN-LAST:event_btnClearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -385,8 +416,9 @@ int x = 300;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Table;
     private javax.swing.JLabel btnBack;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnView;
     private javax.swing.JLabel id;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

@@ -1,6 +1,8 @@
 
 package Main;
 
+import java.awt.Toolkit;
+
 
 public class APImageViewer extends javax.swing.JFrame {
 
@@ -9,11 +11,13 @@ public class APImageViewer extends javax.swing.JFrame {
      */
     public APImageViewer() {
         initComponents();
+        setLocationRelativeTo(null);
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/assets/HUMSS_LOGO.png")));
     }
     
     public void instantiateLblImageView() {
         lblImage = new javax.swing.JLabel(); // Instantiate the lblImageView object
-        panelWrapper.add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 530, 280)); // Add lblImageView to jPanel1
+        panelWrapper.add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1014, 570)); // Add lblImageView to jPanel1
 
     }
     /**
@@ -27,7 +31,6 @@ public class APImageViewer extends javax.swing.JFrame {
 
         panelWrapper = new javax.swing.JPanel();
         lblImage = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Pop up Window");
@@ -39,12 +42,11 @@ public class APImageViewer extends javax.swing.JFrame {
         panelWrapper.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblImage.setForeground(new java.awt.Color(255, 255, 255));
-        panelWrapper.add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 660, 550));
-        panelWrapper.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 570));
+        panelWrapper.add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 996, 550));
 
-        getContentPane().add(panelWrapper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 570));
+        getContentPane().add(panelWrapper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 570));
 
-        setSize(new java.awt.Dimension(680, 569));
+        setSize(new java.awt.Dimension(1014, 570));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -85,7 +87,6 @@ public class APImageViewer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     public static javax.swing.JLabel lblImage;
     private javax.swing.JPanel panelWrapper;
     // End of variables declaration//GEN-END:variables

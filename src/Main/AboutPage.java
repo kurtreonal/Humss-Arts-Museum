@@ -1,5 +1,7 @@
 package Main;
 
+import java.awt.Toolkit;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -17,6 +19,8 @@ public class AboutPage extends javax.swing.JFrame {
      */
     public AboutPage() {
         initComponents();
+        setLocationRelativeTo(null);
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/assets/HUMSS_LOGO.png")));
     }
 
     /**
@@ -31,11 +35,13 @@ public class AboutPage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnAdminPage1 = new javax.swing.JLabel();
         btnBack = new javax.swing.JLabel();
+        btnDevs = new javax.swing.JLabel();
+        btnPolicies = new javax.swing.JLabel();
         lblWrapper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("About ");
-        setAlwaysOnTop(true);
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -49,10 +55,10 @@ public class AboutPage extends javax.swing.JFrame {
         });
         jPanel1.add(btnAdminPage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 590, 110, 110));
 
-        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBack.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnBack.setText("Back");
+        btnBack.setText("BACK");
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnBackMouseClicked(evt);
@@ -60,12 +66,34 @@ public class AboutPage extends javax.swing.JFrame {
         });
         jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 70, 40));
 
-        lblWrapper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/ABOUT PAGE.png"))); // NOI18N
+        btnDevs.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnDevs.setForeground(new java.awt.Color(255, 255, 255));
+        btnDevs.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnDevs.setText("DEVELOPERS");
+        btnDevs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDevsMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnDevs, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 633, 100, 30));
+
+        btnPolicies.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnPolicies.setForeground(new java.awt.Color(255, 255, 255));
+        btnPolicies.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnPolicies.setText("POLICIES");
+        btnPolicies.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPoliciesMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnPolicies, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 633, 100, 30));
+
+        lblWrapper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/aboutpage.png"))); // NOI18N
         jPanel1.add(lblWrapper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
-        setSize(new java.awt.Dimension(1296, 759));
+        setSize(new java.awt.Dimension(1280, 720));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -83,6 +111,18 @@ public class AboutPage extends javax.swing.JFrame {
 
         dispose();
     }//GEN-LAST:event_btnBackMouseClicked
+
+    private void btnDevsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDevsMouseClicked
+        // TODO add your handling code here:
+        AboutDevelopers AD = new AboutDevelopers();
+        AD.show();
+        
+        dispose();
+    }//GEN-LAST:event_btnDevsMouseClicked
+
+    private void btnPoliciesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPoliciesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPoliciesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -124,6 +164,8 @@ public class AboutPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnAdminPage1;
     private javax.swing.JLabel btnBack;
+    private javax.swing.JLabel btnDevs;
+    private javax.swing.JLabel btnPolicies;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblWrapper;
     // End of variables declaration//GEN-END:variables
