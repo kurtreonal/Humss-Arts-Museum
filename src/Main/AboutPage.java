@@ -122,6 +122,10 @@ public class AboutPage extends javax.swing.JFrame {
 
     private void btnPoliciesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPoliciesMouseClicked
         // TODO add your handling code here:
+        AboutPolicies AP = new AboutPolicies();
+        AP.show();
+
+        dispose();
     }//GEN-LAST:event_btnPoliciesMouseClicked
 
     /**

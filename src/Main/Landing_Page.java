@@ -164,7 +164,6 @@ int x = 300;
 
     private void btnAdminPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminPageMouseClicked
         // TODO add your handling code here:
-        // TODO add your handling code here
 
         count++;
         if (count == 10) {

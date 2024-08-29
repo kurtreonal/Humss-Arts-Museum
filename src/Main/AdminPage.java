@@ -6,11 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.*;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.logging.Level;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -19,15 +17,6 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import net.proteanit.sql.DbUtils;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.design.JRDesignQuery;
-import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.xml.JRXmlLoader;
-import net.sf.jasperreports.view.JasperViewer;
 
 public class AdminPage extends javax.swing.JFrame {
     String path = null;
@@ -123,6 +112,7 @@ public class AdminPage extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Table.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Table.setRowHeight(50);
         Table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -580,7 +570,7 @@ public class AdminPage extends javax.swing.JFrame {
         JFileChooser fileChooser = new JFileChooser();
 
         //pang-filter ng file property we use jpg,jpeg and png
-        FileNameExtensionFilter fnef = new FileNameExtensionFilter("PNG JPG AND JPEG", "png", "jpg", "jpeg");
+        FileNameExtensionFilter fnef = new FileNameExtensionFilter("PNG, JPG, AND JPEG", "png", "jpg", "jpeg");
 
         //pagpili nung paglalagay nung mga file na yon ^
         fileChooser.addChoosableFileFilter(fnef);
